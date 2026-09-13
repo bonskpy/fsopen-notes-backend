@@ -26,6 +26,7 @@ const PORT = process.env.PORT || 3001;
 
 app.use(express.json());
 app.use(cors());
+app.use(express.static('dist'))
 app.use(morgan('tiny'));
 
 app.get("/", (request, response) => {
@@ -85,5 +86,5 @@ app.post("/api/notes", (request, response) => {
 })
 
 app.listen(PORT, () => {
-    console.log(`Listening: http://localhost:${PORT}`);
+    console.log(`Listening on ${PORT}`)
 });
